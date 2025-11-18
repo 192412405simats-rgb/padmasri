@@ -1,0 +1,22 @@
+import random
+import string
+
+def generate_random_filename():
+    length = random.randint(5, 10)
+    return "".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(length)) + '.txt'
+
+def create_random_file_content():
+    lines = random.randint(3, 7)
+    content = []
+    for _ in range(lines):
+        line_length = random.randint(20, 50)
+        line = "".join(random.choice(string.ascii_letters + " ") for _ in range(line_length))
+        content.append(line)
+    return "\n".join(content)
+
+filename = generate_random_filename()
+file_content = create_random_file_content()
+
+print(f"Filename: {filename}")
+print("Content:")
+print(file_content)
